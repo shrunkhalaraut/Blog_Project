@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+</head>
+<body>
+    <div class="ui fixed inverted menu">
+        <div class="ui container">
+            <div class="header item"><i class="code icon"></i>Blog Site</div>
+            <a href="/" class="item">Home</a>
+            <a href="/blogs/new">New Post</a>
+        </div>
+     </div>
+    
+    <div class="ui main container segment">
+        <div class="ui huge header">
+          New Blog
+        </div>
+        <form class="ui form" action="/blogs" method="POST">
+          <div class="field"> 
+             <label>Title</label>
+             <input type="text" name="title" placeholder="title">
+          </div>
+          <div class="field"> 
+            <label>Image</label>
+            <input type="text" name="image" placeholder="image">
+         </div>
+         <div class="field"> 
+            <label>Owner</label>
+            <input type="text" name="owner_name" placeholder="image">
+         </div>
+         <div class="field"> 
+          <label>Blog Post</label>
+          <textarea name="body" cols="30" rows="10" placeholder="Your blog area"></textarea>
+       </div>
+           <button class="ui blue big basic button">Submit</button>
+        </form>
+</div>
+</body>
+</html>

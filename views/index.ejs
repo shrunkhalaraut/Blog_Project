@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+</head>
+<body>
+    <div class="ui fixed inverted menu">
+        <div class="ui container">
+            <div class="header item"><i class="code icon"></i>Blog Site</div>
+            <a href="/" class="item">Home</a>
+            <a href="/blogs/new">New Post</a>
+        </div>
+     </div>     
+     
+     <div class="ui main text container">
+        <div class="ui huge header">Blog App</div>
+        <div class="ui top attached segment">
+          <div class="ui divided items">
+            <% allBlogs.forEach(function(item){ %>
+            <div class="item">
+              <div class="image">
+                <img style="width: 150px; height: 150px;" src="<%= item.image %>">
+              </div>
+              <div class="content">
+                <a class="header" href="/blogs/<%= item._id %>"><%= item.title %> <i>Added by <%= item.added_by %></i></a>
+                <div class="meta">
+                  <span><%= item.createdAt.toDateString() %></span>
+                </div>
+                <div class="description">
+                  <p><%= item.body.substring(0,100) %> ....</p>
+                </div>
+                <div class="extra">
+                  <a class="ui floated voilet basic button" href="/blogs/<%= item._id %>">
+                    Read More >>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
