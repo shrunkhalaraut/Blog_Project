@@ -55,6 +55,9 @@ app.post("/blogs", async (req, res) => {
     res.redirect("/blogs")
 })
 
+app.get("/blogs/new", (req,res)=>{
+    res.render("new.ejs");
+})
 
 app.listen(8080, ()=>{
     console.log('server started')
